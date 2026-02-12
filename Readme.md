@@ -31,6 +31,10 @@ To address revenue decline and low occupancy challenges, I followed a structured
   - Handling missing/null values  
   - Standardizing data types and formats  
   - Detecting and treating outliers using statistical methods (IQR, Z-Score)
+- **STAR SCHEMA DATA MODEL**
+  - Used to connect all the tables with fact table (center table) that storing like booking and revenue. The dimension tables are lied on center table they kept remianing details like city, date kind of information.
+  - **Why STAR SCHEMA**
+    - That simplifies relationships, improves performances foraggregations and rankings, and makes analysis easier and faster.
 - Performed Exploratory Data Analysis (EDA) to uncover trends in occupancy, cancellations, pricing, and platform performance.
 - Created new key measures to evaluate revenue performance, booking efficiency, pricing strategy, and week-over-week growth.
 - Designed interactive dashboards to compare city-level, property-level, and platform-level performance.
@@ -358,3 +362,5 @@ Based on my analysis, I suggest the following improvements for the business:
 - DAX
 - Power Query
 
+## Dashboard Link 
+https://app.powerbi.com/groups/me/reports/d4af6be0-a1d9-4c71-93f1-9cba3e437f56/ReportSectionce2063a216d8e001051e?experience=power-bi
