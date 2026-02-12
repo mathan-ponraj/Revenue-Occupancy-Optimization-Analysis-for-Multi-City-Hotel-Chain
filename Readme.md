@@ -34,7 +34,7 @@ To address revenue decline and low occupancy challenges, I followed a structured
 - **STAR SCHEMA DATA MODEL**
   - Used to connect all the tables with fact table (center table) that storing like booking and revenue. The dimension tables are lied on center table they kept remianing details like city, date kind of information.
   - **Why STAR SCHEMA**
-    - That simplifies relationships, improves performances foraggregations and rankings, and makes analysis easier and faster.
+    - That simplifies relationships, improves performances for aggregations and rankings, and makes analysis easier and faster.
 - Performed Exploratory Data Analysis (EDA) to uncover trends in occupancy, cancellations, pricing, and platform performance.
 - Created new key measures to evaluate revenue performance, booking efficiency, pricing strategy, and week-over-week growth.
 - Designed interactive dashboards to compare city-level, property-level, and platform-level performance.
