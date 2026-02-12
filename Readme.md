@@ -1,9 +1,9 @@
 # Revenue Optimization Analysis for Multi-City Hospitality Chain
 
 ## Business Problem 
-This multi-city hotel chain was facing revenue decline and decreasing profit margins over the past few years. In some cities, many hotel rooms were not occupied, which resulted in a low occupancy rate. Their overall booking efficiency was also going down year by year.
+This multi-city hotel chain was facing revenue decline and decreasing profit margins over the past few years. In some cities, many hotel rooms were not occupied, which resulted in a low occupancy rate. Their overall booking efficiency was also not increasing.
 
-Management wanted to improve occupancy rate, increase profit margins, and reduce the number of unoccupied rooms. However, they did not clearly understand the main reason behind these issues.
+Management wanted to improve occupancy rate, increase profit margins, and increase the occupancy rate. However, they did not clearly understand the main reasons why this causes.
 
 ---
 
@@ -26,20 +26,20 @@ Management wanted to improve occupancy rate, increase profit margins, and reduce
 
 To address revenue decline and low occupancy challenges, I followed a structured end-to-end analytics workflow:
 
-- Collected booking, revenue, customer rating, and inventory data across multiple cities and properties.
-- Cleaned and transformed raw datasets by:
+- Collected booking, revenue, customer rating, and inventory data across multiple cities.
+- Cleaned raw datasets by:
   - Handling missing/null values  
   - Standardizing data types and formats  
   - Detecting and treating outliers using statistical methods (IQR, Z-Score)
 - Performed Exploratory Data Analysis (EDA) to uncover trends in occupancy, cancellations, pricing, and platform performance.
-- Built 26 business-focused DAX measures to evaluate revenue performance, booking efficiency, pricing strategy, and week-over-week growth.
+- Created new key measures to evaluate revenue performance, booking efficiency, pricing strategy, and week-over-week growth.
 - Designed interactive dashboards to compare city-level, property-level, and platform-level performance.
 
 ---
 
-# Key Metrics & DAX Measures
+# Key Metrics & Formulas
 
-## 🔹 Core Performance Metrics
+## Core Performance Metrics
 
 ### 1. Revenue  
 Total realized revenue from bookings.
@@ -83,10 +83,6 @@ Total number of days in selected period.
 No of Days = DATEDIFF(MIN(dim_date[date]), MAX(dim_date[date]), DAY) + 1
 ```
 
----
-
-## 🔹 Cancellation & No-Show Metrics
-
 ### 8. Total Cancelled Bookings
 ```DAX
 Total Cancelled Bookings =
@@ -123,11 +119,6 @@ Percentage of bookings successfully completed.
 Realisation % =
 1 - ([Cancellation %] + [No Show Rate %])
 ```
-
----
-
-## 🔹 Booking Contribution Metrics
-
 ### 14. Booking % by Platform
 Percentage contribution of each booking platform (OTA vs Direct).
 ```DAX
@@ -148,9 +139,8 @@ DIVIDE(
 ) * 100
 ```
 
----
 
-## 🔹 Revenue Efficiency Metrics
+
 
 ### 16. ADR (Average Daily Rate)
 Average revenue earned per booked room.
@@ -181,10 +171,6 @@ Average rooms successfully utilized per day.
 ```DAX
 DURN = DIVIDE([Total Checked Out], [No of Days])
 ```
-
----
-
-## 🔹 Week-over-Week (WoW) Growth Metrics
 
 ### 21. Revenue WoW Change %
 ```DAX
@@ -222,7 +208,7 @@ RETURN
 DIVIDE(curr_week, prev_week, 0) - 1
 ```
 
----
+
 
 ### 23. ADR WoW Change %
 
@@ -245,7 +231,7 @@ RETURN
 DIVIDE(curr_week, prev_week, 0) - 1
 ```
 
----
+
 
 ### 24. RevPAR WoW Change %
 
@@ -268,7 +254,7 @@ RETURN
 DIVIDE(curr_week, prev_week, 0) - 1
 ```
 
----
+
 
 ### 25. Realisation WoW Change %
 
@@ -291,7 +277,6 @@ RETURN
 DIVIDE(curr_week, prev_week, 0) - 1
 ```
 
----
 
 ### 26. DSRN WoW Change %
 
